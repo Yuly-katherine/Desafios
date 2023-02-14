@@ -95,7 +95,6 @@ class ProductManager {
             return console.error(`El producto con el ID ${productId} no existe`);
         } else {
             this.products.splice(index, 1);
-            console.log(this.products)
             await fs.promises.writeFile(this.#path, JSON.stringify(this.products));
         }
     }
