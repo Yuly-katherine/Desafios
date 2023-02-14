@@ -25,7 +25,7 @@ class ProductManager {
         if( Object.values(nuevoProducto).includes(undefined) ) {
             console.error('No se han ingresado todos los datos');
         } else {
-            this.products = [...this.products, nuevoProducto]
+            this.products = [...this.products, nuevoProducto];
             this.#accumId +=1;
         }
     }
@@ -50,20 +50,20 @@ class ProductManager {
 const checkProducts = new ProductManager();
 
 //2. Se llamará “getProducts” recién creada la instancia, debe devolver un arreglo vacío []
-console.log(checkProducts.getProducts())
+console.log(checkProducts.getProducts());
 
 // 3. Se llamará al método “addProduct” con los campos: 
 //("producto prueba", "Este es un producto prueba”, 200, "sin imagen", "abc123", 25)
 checkProducts.addProduct("producto prueba", "este es un producto prueba", 200, "sin imagen", "abc123",25)
 
 // 4. Se llamará el método “getProducts” nuevamente, esta vez debe aparecer el producto recién agregado
-console.log(checkProducts.getProducts())
+console.log(checkProducts.getProducts());
 
 //5. Se llamará al método “addProduct” con los mismos campos de arriba, debe arrojar un error porque el código estará repetido.
-checkProducts.addProduct("producto prueba", "este es un producto prueba", 200, "sin imagen", "abc123",25)
+checkProducts.addProduct("producto prueba", "este es un producto prueba", 200, "sin imagen", "abc123",25);
 
 //6. Se evaluará que getProductById devuelva error si no encuentra el producto 
-checkProducts.getProductById(2)
+checkProducts.getProductById(2);
 
 //7. getProductById devuelve el producto en caso de encontrarlo
-checkProducts.getProductById(0)
+checkProducts.getProductById(0);
