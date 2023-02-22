@@ -44,7 +44,6 @@ class ProductManager {
         if(products.length > 0) {
             const ids = products.map( prods => prods.id);
             let maxIds = Math.max(...ids);
-            console.log(maxIds ++)
             return maxIds ++
         } else {
             return 0
