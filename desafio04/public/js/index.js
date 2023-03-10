@@ -1,12 +1,14 @@
 const socket = io()
 
-const containerProducts = document.getElementById("containerProducts")
+const container = document.getElementById("container")
 
 socket.on("newProduct", (data)=>{
-    containerProducts.innerHTML += `
+    container.innerHTML += `
                                     <li>
                                         <p><b>${data.title}</b></p>
+                                        <p>${data.id}</p>
                                         <p>Precio: $ ${data.price}</p>
+                                        <p>Code:${data.code}</p>
                                         <p>Descripción: ${data.description}</p>
                                         <p>Stock: ${data.stock}</p>
                                         <p>Categoría: ${data.category}</p>
@@ -14,31 +16,35 @@ socket.on("newProduct", (data)=>{
                                     `
 })
 
-socket.on("deleteProduct", (products)=>{
-    containerProducts.innerHTML = ""
-    products.forEach( prod => {
-        containerProducts.innerHTML += `
+socket.on("deleteProduct", (data)=>{
+    container.innerHTML = ""
+    data.forEach( product => {
+        container.innerHTML += `
                                         <li>
-                                            <p><b>${prod.title}</b></p>
-                                            <p>Precio: $ ${prod.price}</p>
-                                            <p>Descripción: ${prod.description}</p>
-                                            <p>Stock: ${prod.stock}</p>
-                                            <p>Categoría: ${prod.category}</p>
+                                            <p><b>${product.title}</b></p>
+                                            <p>${product.id}</p>
+                                            <p>Precio: $ ${product.price}</p>
+                                            <p>Code:${product.code}</p>
+                                            <p>Descripción: ${product.description}</p>
+                                            <p>Stock: ${product.stock}</p>
+                                            <p>Categoría: ${product.category}</p>
                                         </li>
                                         `
     }) 
 })
 
-socket.on("updateProduct", (products)=>{
-    containerProducts.innerHTML = ""
-    products.forEach( prod => {
-        containerProducts.innerHTML += `
+socket.on("updateProduct", (data)=>{
+    container.innerHTML = ""
+    data.forEach( product => {
+        container.innerHTML += `
                                         <li>
-                                            <p><b>${prod.title}</b></p>
-                                            <p>Precio: $ ${prod.price}</p>
-                                            <p>Descripción: ${prod.description}</p>
-                                            <p>Stock: ${prod.stock}</p>
-                                            <p>Categoría: ${prod.category}</p>
+                                            <p><b>${product.title}</b></p>
+                                            <p>${product.id}</p>
+                                            <p>Precio: $ ${product.price}</p>
+                                            <p>Code:${product.code}</p>
+                                            <p>Descripción: ${product.description}</p>
+                                            <p>Stock: ${product.stock}</p>
+                                            <p>Categoría: ${product.category}</p>
                                         </li>
                                         `
     }) 

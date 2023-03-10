@@ -1,7 +1,7 @@
 import fs from "fs";
 
 class ProductManager {
-  #path = "./src/dataManager/products.json";
+  #path = "./src/dataManager/productos.json";
 
   async addProduct(title, description, price, code, stock, category) {
     const products = await this.getProducts();
@@ -117,13 +117,14 @@ class ProductManager {
 
 async function main(){
     //1. Se creará una instancia de la clase “ProductManager”
-    const manager = new ProductManager();
+    // const manager = new ProductManager();
 
     //2. Se llamará “getProducts” recién creada la instancia, debe devolver un arreglo vacío []
-    console.log(await manager.getProducts(), "productos")
+    // console.log(await manager.getProducts(), "productos")
 
     // 3. Se llamará al método “addProduct”
-    // await manager.addProduct("camiseta", "camiseta talla-s color azul", 70, "sin imagen", "#ref1569", 8)
+    // title, description, price, code, stock, category
+    // await manager.addProduct("teclado", "teclado HP", 25, "#ref5891", 8, "tecnologia")
     // await manager.addProduct("jeans", "jeans talla-10", 220, "sin imagen", "#ref9456", 5)
     // await manager.addProduct("buso", "tejido talla-M", 130, "sin imagen", "#ref4620", 3)
     // await manager.addProduct("Tenis", "deportivos blancos", 300, "sin imagen", "#ref8915", 6)
@@ -144,7 +145,7 @@ async function main(){
 
     //6. Se llamará al método “deleteProduct”, se evaluará que realmente se elimine el producto o que arroje un error en caso de no existir.
 
-    // await manager.deleteProduct(6)
+    // await manager.deleteProduct(10)
     // await manager.deleteProduct(2)
 
     // console.log(await manager.getProducts(), "productos eliminados")

@@ -1,10 +1,12 @@
 <div>
     <h1>Productos Actualizados:</h1>
-    <ul id="containerProducts">
+    <ul id="container">
         {{#each products}}
             <li>
                 <p><b>{{title}}</b></p>
+                <p>Id: {{id}}</p>
                 <p>Precio: ${{price}}</p>
+                <p>Code: {{code}}</p>
                 <p>Descripción: {{description}}</p>
                 <p>Stock: {{stock}}</p>
                 <p>Categoría: {{category}}</p>
